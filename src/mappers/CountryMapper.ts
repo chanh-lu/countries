@@ -2,10 +2,11 @@ import { Country } from "../types/Country";
 
 export function mapRestCountriesToCountries(data: any[]): Country[] {
   return data.map((item: any) => {
-    const name = item.name;
     return {
-      name: name.common,
-      officialName: name.official,
+      name: item.name.common,
+      officialName: item.name.official,
+      flagUrl: item.flags.svg,
+      flagAlt: item.flags.alt,
     };
   });
 }

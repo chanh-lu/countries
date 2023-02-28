@@ -26,10 +26,13 @@ export function CountryList({
   }, [controller]);
 
   return (
-    <ul>
+    <>
       {countries.map((country) => (
-        <li key={country.officialName}>{country.name}</li>
+        <div>
+          <img src={country.flagUrl} alt={country.flagAlt} />
+          <p>{country.name}</p>
+        </div>
       ))}
-    </ul>
+    </>
   );
 }
